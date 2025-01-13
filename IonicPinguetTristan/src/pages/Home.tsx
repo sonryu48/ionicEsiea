@@ -1,7 +1,7 @@
 import { IonAvatar, IonCheckbox, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonTitle, IonToolbar, IonIcon, useIonAlert, useIonLoading } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
-import { Pokemons, useApi } from '../hooks/useApiTyradex';
+import { Pokemons, useApi } from '../api/useApiTyradex';
 import { useEffect, useState } from 'react';
 import { trashBin } from 'ionicons/icons'
 

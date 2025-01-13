@@ -1,0 +1,7 @@
+{
+  "name": "IonicPinguetTristan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

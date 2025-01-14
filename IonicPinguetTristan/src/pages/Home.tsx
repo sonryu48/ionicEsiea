@@ -1,9 +1,9 @@
-import { IonAvatar, IonCheckbox, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonTitle, IonToolbar, IonIcon, useIonAlert, useIonLoading } from '@ionic/react';
+import { IonAvatar, IonCheckbox, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonTitle, IonToolbar, IonIcon, useIonAlert, useIonLoading, IonButton } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import { Pokemons, useApi } from '../api/useApiTyradex';
 import { useEffect, useState } from 'react';
-import { trashBin } from 'ionicons/icons'
+import { reader } from 'ionicons/icons'
 
 const Home: React.FC = () => {
 
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             <IonItem key={item.pokedexId}>
               <IonAvatar slot='start'><IonImg src={item.sprites.regular}></IonImg></IonAvatar>
               <IonLabel>{item.name.fr}</IonLabel>
-              <IonIcon name={trashBin} slot="end"/>
+              <IonIcon icon={reader}/>
             </IonItem>
           ))}
         </IonList>

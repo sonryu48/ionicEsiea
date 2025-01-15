@@ -46,7 +46,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonSearchbar value={searchTerm} onIonChange={(e) => setSearchTerm(e.detail.value!)}/>
+        <IonSearchbar value={searchTerm} placeholder='feu' onIonChange={(e) => setSearchTerm(e.detail.value!)}/>
 
         <IonList>
           {results.map((item: Pokemons) => (
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
                 <IonIcon icon={readerOutline}/>
               </IonButton>
 
-              <IonModal trigger={item.name.fr} initialBreakpoint={.25} breakpoints={[0, .25, .5, .75]}>
+              <IonModal trigger={item.name.fr} initialBreakpoint={.25} breakpoints={[0, .25, .75]}>
                 <IonContent className='ion-padding'>
                     <IonItem lines='none'>
                       <IonAvatar slot='start'><IonImg src={item.sprites.regular}></IonImg></IonAvatar>

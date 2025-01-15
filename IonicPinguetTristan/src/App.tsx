@@ -47,7 +47,7 @@ const App: React.FC = () => (
         <Route exact path="/register">
           <Register />
         </Route>
-        <Route exact path="/home">
+        <Route exact path="/pokemon">
           <Home />
         </Route>
       </IonRouterOutlet>

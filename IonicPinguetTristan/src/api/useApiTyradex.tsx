@@ -1,10 +1,12 @@
 export interface Pokemons {
-    pokedexId: string
+    id: string
     name: any
     generation: number
     height: string
     weight: string
     sprites: any
+    category: string
+    stats: any
 }
 
 export interface Error {
@@ -13,16 +15,27 @@ export interface Error {
     type: string
 }
 
-export const useApi = () => {
+export const useApiPokemon = (isType: boolean) => {
     let url = 'https://tyradex.app/api/v1/'
 
-    const searchType = async (type: string): Promise<Pokemons[] | Error> => {
-        const result = await fetch(
-            `${url}types/${type}`
-        )
-        return result.json()
+    if (isType == true) {
+        const searchString = async (String: string): Promise<Pokemons[] | Error> => {
+            const result = await fetch(
+                `${url}types/${String}`
+            )
+            return result.json()
+        }
+        return { searchString }
+    } else {
+        const searchString = async (String: string): Promise<Pokemons[] | Error> => {
+            const result = await fetch(
+                `${url}pokemon/${String}`
+            )
+            return result.json()
+        }
+        return { searchString }
     }
-    return { searchType }
+    
 }
 
-export default useApi
+export default useApiPokemon

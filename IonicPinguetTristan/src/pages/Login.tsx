@@ -5,7 +5,7 @@ const Login: React.FC = () => {
     const router = useIonRouter();
     const doLogin = (event:any) => {
         event.preventDefault();
-        router.push('/home', 'root');
+        router.push('/pokemon', 'root');
     }
     return (
         <IonPage>

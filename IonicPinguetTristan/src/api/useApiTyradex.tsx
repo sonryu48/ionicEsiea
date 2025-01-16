@@ -1,3 +1,4 @@
+//definition des objets qui seront retourné par l'api
 export interface Pokemons {
     id: string
     name: any
@@ -18,6 +19,7 @@ export interface Error {
 export const useApiPokemon = (isType: boolean) => {
     let url = 'https://tyradex.app/api/v1/'
 
+    //if else qui permet de choisir si on recherche par type ou par pokemon
     if (isType == true) {
         const searchString = async (String: string): Promise<Pokemons[] | Error> => {
             const result = await fetch(

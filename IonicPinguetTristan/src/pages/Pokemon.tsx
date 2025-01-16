@@ -23,6 +23,7 @@ const Home: React.FC = () => {
       return
     }
 
+    //fonction qui trigger l'appel a l'api, affiche un chargement et affiche une alerte si erreur
     const loadData = async() => {
       await loading()
       const result: any = await searchString(searchTerm)
@@ -48,6 +49,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonSearchbar value={searchTerm} placeholder='feu' onIonChange={(e) => setSearchTerm(e.detail.value!)}/>
 
+        {/*liste des pokémons retourner dans results*/}
         <IonList>
           {results.map((item: Pokemons) => (
             <IonItem key={item.name.fr}>
@@ -57,12 +59,14 @@ const Home: React.FC = () => {
                 <IonIcon icon={readerOutline}/>
               </IonButton>
 
+              {/*création d'une modal par item, affiche plus d'information*/}
               <IonModal trigger={item.name.fr} initialBreakpoint={.25} breakpoints={[0, .25, .75]}>
                 <IonContent className='ion-padding'>
                     <IonItem lines='none'>
                       <IonAvatar slot='start'><IonImg src={item.sprites.regular}></IonImg></IonAvatar>
                       <IonLabel>{item.name.fr}</IonLabel>
                       <IonLabel slot='end'>{item.id}</IonLabel>
+                      {/*bouton qui permet d'ouvrir dans un navigateur externe la page pokepedia du pokemon*/}
                       <IonButton id={item.name.fr} fill='outline' onClick={(e:any) => Browser.open({ url: 'https://www.pokepedia.fr/' + item.name.fr})}>
                         <IonIcon icon={exitOutline}/>
                       </IonButton>

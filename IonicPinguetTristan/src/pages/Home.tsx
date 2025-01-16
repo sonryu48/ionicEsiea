@@ -4,6 +4,7 @@ import { Haptics } from '@capacitor/haptics';
 
 const Home: React.FC = () => {
 
+    //fonction qui permet de faire vibrer l'appareil
     const hapticsNotif = async () => {
         await Haptics.vibrate();
     }
@@ -20,6 +21,7 @@ const Home: React.FC = () => {
                     <IonLabel>Dans cette application, vous pourrez en apprendre plus sur les pokemons grâce à l'API Tyradex</IonLabel>
                 </IonItem>
                 <IonItem lines='none'>
+                    {/*appel de la fonction de vibration pour donner un retour a l'utilisateur au changement de page*/}
                     <IonButton routerLink='/pokemon' onClick={(e:any) => hapticsNotif()}>
                         <IonLabel>Commencer les recherches </IonLabel>
                     </IonButton>
